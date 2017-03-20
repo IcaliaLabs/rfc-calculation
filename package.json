@@ -1,0 +1,21 @@
+{
+  "name": "rfc-calculation",
+  "description": "Calculates mexican RFC.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IcaliaLabs/rfc-calculation.git"
+  },
+  "main": "lib/rfc-calculation.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "nodeunit": "^0.11.0"
+  },
+  "keywords": [
+    "rfc",
+    "calculation"
+  ]
+}

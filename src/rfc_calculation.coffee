@@ -1,4 +1,4 @@
-class window.RfcCalculation
+class RfcCalculation
 
   ARTICLES = ["DEL", "LAS", "DE", "LA", "Y", "A", "MC", "LOS", "VON", "VAN", "MAC", "MI"]
 
@@ -272,3 +272,5 @@ class window.RfcCalculation
       @rfc += "A"
     else
       @rfc += partialSum
+
+  module.exports = RfcCalculation
