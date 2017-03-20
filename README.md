@@ -13,7 +13,7 @@
 
 ## Usage
 
-To calculate a RFC you'll need to provide the following parameters:
+To calculate a RFC, you'll need to provide the following parameters:
 
 - Name
 - Paternal Lastname
@@ -35,8 +35,8 @@ console.log(result.rfc)
 And that's it! Just make sure that your date is formatted like so: ```
 YYYY-MM-DD ``` and you'll have your RFC.
 
-## Credits
-[BanregioLABS](https://github.com/banregiolabs)
+## Acknowledgements
+This code was based on [@banregiolabs](https://github.com/banregiolabs) java's version.
 
 ## License
 MIT License
