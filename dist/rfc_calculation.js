@@ -29,11 +29,15 @@ RfcCalculation = (function() {
     this._removeBlankSpacesForNameAndLastName();
     this.paternalLname = this._removeArticlesFrom(this.paternalLname);
     this.maternalLname = this._removeArticlesFrom(this.maternalLname);
+    this.fullName = this.paternalLname + ' ' + this.maternalLname + ' ' + this.name;
+    this.name = this._removeArticlesFrom(this.name)
     this.rfc = this.paternalLname[0];
     for (i = j = 0, ref = this.paternalLname.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
-      if (this._isVocal(this.paternalLname[i])) {
-        this.rfc += this.paternalLname[i];
-        break;
+      if( i > 0 ){
+        if (this._isVocal(this.paternalLname[i])) {
+          this.rfc += this.paternalLname[i];
+          break;
+        }
       }
     }
     if (this.maternalLname !== '') {
@@ -105,7 +109,7 @@ RfcCalculation = (function() {
   };
 
   RfcCalculation.prototype._calculateHomoClave = function() {
-    var RFC1, RFC2, RFC3, currentValue, div, fullName, hc, i, index, j, key, mod, nameInNumber, nextValue, partialSum, ref, rfcToSum, sumValue, verifierModule;
+    var RFC1, RFC2, RFC3, currentValue, div, hc, i, index, j, key, mod, nameInNumber, nextValue, partialSum, ref, rfcToSum, sumValue, verifierModule;
     nameInNumber = "";
     sumValue = 0;
     RFC1 = {
@@ -224,10 +228,10 @@ RfcCalculation = (function() {
       " ": "37"
     };
     nameInNumber += "0";
-    fullName = this.paternalLname + " " + this.maternalLname + " " + this.name;
+    
     i = 0;
-    while (i < fullName.length) {
-      nameInNumber += RFC1[fullName[i]] || "00";
+    while (i < this.fullName.length) {
+      nameInNumber += RFC1[this.fullName[i]] || "00";
       i++;
     }
     i = 0;
